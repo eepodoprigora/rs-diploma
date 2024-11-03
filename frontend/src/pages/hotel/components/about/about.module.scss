@@ -1,0 +1,10 @@
+@use "../../../../styles/vars" as v;
+
+.about {
+  width: v.s(800);
+}
+
+.content {
+  font-size: v.s(16);
+  line-height: 125%;
+}

@@ -1,0 +1,57 @@
+@use "../../../../styles/vars" as v;
+
+.users-item {
+  &:not(:last-child) {
+    border-bottom: 1px solid v.c(w1);
+  }
+}
+
+.users-row {
+  display: flex;
+  background-color: v.c(grey1);
+
+  li {
+    width: v.s(230);
+    padding: v.s(20) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:last-child {
+      width: v.s(110);
+    }
+  }
+}
+
+.change,
+.block {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.change {
+  display: inline-block;
+  margin-right: v.s(10);
+  padding-right: v.s(10);
+  border-right: 1px solid v.c(w1);
+
+  &[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select {
+  width: 80%;
+  background-color: transparent;
+  padding: v.s(7);
+  font-size: v.s(14);
+  color: v.c(w1);
+}

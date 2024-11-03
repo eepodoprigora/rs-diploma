@@ -1,0 +1,18 @@
+@use "../../styles/vars" as v;
+
+.footer {
+  min-height: v.s(60);
+  color: v.c(w1);
+  background-color: v.c(b1);
+  border-top: 1px solid v.c(b2);
+  padding: v.s(20) 0;
+}
+
+.content {
+  font-size: v.s(11);
+  line-height: 120%;
+  color: v.c(b2);
+  text-align: center;
+  width: v.s(800);
+  margin: 0 auto;
+}

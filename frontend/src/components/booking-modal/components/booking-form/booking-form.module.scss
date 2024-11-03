@@ -1,0 +1,41 @@
+@use "../../../../styles/vars" as v;
+
+.dates {
+  display: flex;
+  margin-bottom: v.s(30);
+  gap: v.s(20);
+
+  input {
+    width: 100%;
+  }
+}
+
+.error {
+  font-size: v.s(12);
+  color: v.c(r1);
+  padding-top: v.s(5);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: v.s(10);
+  width: 100%;
+}
+
+.label {
+  margin-top: 1rem;
+}
+
+.input {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid v.c(blue1);
+  background-color: transparent;
+}

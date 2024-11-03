@@ -1,0 +1,70 @@
+@use "../../../../styles/vars" as v;
+
+.bookings-item {
+  &:not(:last-child) {
+    border-bottom: 1px solid v.c(w1);
+  }
+}
+
+.bookings-row {
+  // padding: v.s(15);
+  display: flex;
+  background-color: v.c(grey1);
+  flex-wrap: wrap;
+
+  li {
+    width: v.s(230);
+    padding: v.s(25) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+
+    &:last-child {
+      width: v.s(110);
+    }
+  }
+
+  input {
+    width: v.s(200);
+    background-color: unset;
+    color: v.c(w1);
+    padding: v.s(5);
+    border: 1px solid v.c(blue1);
+  }
+}
+
+.change,
+.block {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.change {
+  display: inline-block;
+  margin-right: v.s(10);
+  padding-right: v.s(10);
+  border-right: 1px solid v.c(w1);
+
+  &[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error {
+  position: absolute;
+  bottom: 0;
+  color: v.c(r1);
+  font-size: v.s(12);
+  width: 100%;
+  padding-top: v.s(5);
+}

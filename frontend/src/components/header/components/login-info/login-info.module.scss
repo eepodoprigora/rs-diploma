@@ -1,0 +1,31 @@
+@use "../../../../styles/_vars.scss" as v;
+
+.buttons {
+  display: flex;
+  gap: v.s(10);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.login {
+  margin-right: v.s(10);
+}
+
+.users {
+  margin-right: v.s(15);
+}
+.add-hotel {
+  margin-right: v.s(15);
+}
+.bookings {
+  margin-right: v.s(15);
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  gap: v.s(5);
+}

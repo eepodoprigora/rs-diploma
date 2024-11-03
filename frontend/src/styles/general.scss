@@ -1,0 +1,50 @@
+@use "./vars" as v;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overscroll-behavior: none;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  font-size: v.$bodyFontSize;
+  font-family: v.$baseFontFamily;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: v.$mobileBaseFontSize !important;
+  }
+}
+
+.container {
+  padding: 0 40px;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  height: 100%;
+}

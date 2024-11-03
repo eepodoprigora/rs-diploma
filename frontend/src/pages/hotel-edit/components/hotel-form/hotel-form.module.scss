@@ -1,0 +1,18 @@
+@use "../../../../styles/vars" as v;
+
+.flex {
+  display: flex;
+  gap: v.s(20);
+}
+
+.center {
+  justify-content: center;
+}
+
+.success {
+  font-size: v.s(20);
+  text-align: center;
+  padding-top: v.s(20);
+  color: v.c(green1);
+  margin-bottom: v.s(15);
+}

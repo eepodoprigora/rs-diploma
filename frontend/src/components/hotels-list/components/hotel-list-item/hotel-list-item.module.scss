@@ -1,0 +1,100 @@
+@use "../../../../styles/vars" as v;
+
+.card {
+  &:not(:last-child) {
+    margin-bottom: v.s(15);
+  }
+}
+.card-wrapper {
+  border-radius: v.$mediumBr;
+  background-color: v.c(b5);
+  color: v.c(w1);
+  display: flex;
+  overflow: hidden;
+  // width: v.s(800);
+
+  @include v.hover-active {
+    .title {
+      color: v.c(r1);
+    }
+  }
+}
+
+.left {
+  width: v.s(300);
+  height: v.s(188);
+  flex-shrink: 0;
+}
+
+.img {
+  width: 100%;
+}
+
+.right {
+  width: 100%;
+  padding: v.s(16) v.s(16) v.s(16) v.s(30);
+  display: flex;
+}
+
+.right-main {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  padding-right: v.s(20);
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 1px;
+    background-color: v.c(b2);
+  }
+}
+
+.right-main-sec {
+  display: flex;
+}
+
+.title {
+  font-size: v.s(18);
+  color: v.c(blue1);
+  transition: color v.$fast;
+  margin-bottom: v.s(15);
+}
+
+.rating {
+  font-size: v.s(12);
+  background-color: v.c(green1);
+  padding: 0 v.s(4);
+  margin-right: v.s(8);
+  border-radius: v.$smallXsBr;
+  color: v.c(b1);
+}
+
+.reviews {
+  font-size: v.s(14);
+  margin-right: v.s(8);
+  margin-left: v.s(3);
+}
+
+.from {
+  font-size: v.s(20);
+}
+
+.price-num {
+  font-size: v.s(26);
+  font-weight: 600;
+}
+
+.right-sec {
+  padding-left: v.s(20);
+}
+
+.per-day {
+  padding-top: v.s(3);
+  font-size: v.s(12);
+  display: block;
+  margin-bottom: v.s(20);
+}

@@ -1,0 +1,38 @@
+@use "../../styles/_vars.scss" as v;
+
+.header {
+  height: v.$header_height;
+  color: v.c(w1);
+  border-bottom: 1px solid v.c(b2);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: v.c(b1);
+  z-index: 6;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  font-size: v.s(26);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color v.$fast;
+  cursor: pointer;
+
+  @include v.hover-active {
+    color: v.c(r1);
+  }
+}
+
+.logo-img {
+  // width: v.s(50);
+  height: v.s(55);
+}

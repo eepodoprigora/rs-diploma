@@ -1,0 +1,101 @@
+@use "../../../../styles/vars" as v;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: v.s(20);
+}
+
+.label {
+  margin-bottom: v.s(5);
+  display: block;
+}
+
+.input {
+  background-color: transparent;
+  min-height: v.s(35);
+  border-radius: v.$smallBr;
+  border: 1px solid v.c(blue1);
+  font-size: v.s(14);
+  padding: 0 v.s(10);
+
+  &[name="addressline"],
+  &[name="title"] {
+    width: v.s(345);
+  }
+
+  &[name^="photo-"] {
+    width: 100%;
+  }
+
+  &[type="checkbox" i] {
+    background-color: transparent;
+  }
+}
+
+.textarea {
+  background-color: transparent;
+  resize: none;
+  padding: v.s(10);
+  border-radius: v.$smallBr;
+  border: 1px solid v.c(blue1);
+  min-height: v.s(70);
+  font-family: inherit;
+  font-size: v.s(14);
+}
+
+.add-photo {
+  display: flex;
+  margin-bottom: v.s(10);
+}
+
+.error {
+  font-size: v.s(12);
+  color: v.c(r1);
+  padding-top: v.s(3);
+  padding-bottom: v.s(5);
+}
+
+.checkboxes-wrapper {
+  margin-bottom: v.s(20);
+}
+
+.checkboxes {
+  display: grid;
+  grid-template-columns: repeat(2, v.s(180));
+}
+
+.checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.checkbox:checked + label::before {
+  border-color: v.c(blue1);
+  background-color: v.c(blue1);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.checkbox-wrapper {
+  position: relative;
+  margin-bottom: v.s(8);
+}

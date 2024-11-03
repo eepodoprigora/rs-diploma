@@ -1,0 +1,22 @@
+@use "../../styles/vars" as v;
+
+.main {
+  background-color: v.c(b1);
+  color: v.c(w1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.wrong {
+  color: v.c(r1);
+  font-size: v.s(50);
+  margin-bottom: v.s(20);
+}
+
+.message {
+  font-size: v.s(20);
+  margin-bottom: v.s(20);
+}

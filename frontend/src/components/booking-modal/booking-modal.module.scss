@@ -1,0 +1,64 @@
+@use "../../styles/vars" as v;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.overlay {
+  background: rgba(v.c(b1), 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  width: v.s(800);
+  background-color: v.c(blue2);
+  border-radius: v.$mediumBr;
+  padding: v.s(40);
+  z-index: 4;
+  color: v.c(b1);
+}
+
+.top {
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  right: 0;
+  top: v.s(-8);
+  width: v.s(48);
+  height: v.s(48);
+  background-color: v.c(b1);
+  border-radius: 50%;
+  color: v.c(w1);
+  border: none;
+  font-size: v.s(20);
+  cursor: pointer;
+  transition: background-color v.$fast;
+  z-index: 2;
+
+  @include v.hover-active {
+    background-color: v.c(b2);
+  }
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+}
+
+.success-text {
+  margin-bottom: v.s(50);
+}

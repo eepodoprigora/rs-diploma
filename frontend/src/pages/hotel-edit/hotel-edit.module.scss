@@ -1,0 +1,29 @@
+@use "../../styles/vars" as v;
+
+.wrapper {
+  background-color: v.c(blue2);
+}
+
+.main {
+  padding-top: calc(v.$header_height + v.s(50));
+  padding-bottom: v.s(50);
+  min-height: 100vh;
+  width: v.s(800);
+  margin: 0 auto;
+}
+
+.h1 {
+  font-size: v.s(30);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: v.s(30);
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

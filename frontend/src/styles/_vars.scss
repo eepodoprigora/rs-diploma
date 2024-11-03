@@ -1,0 +1,65 @@
+@use "sass:map";
+
+@font-face {
+  font-family: "ttfors";
+  src: url("../fonts/helvetica.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+}
+
+$baseFontFamily: "ttfors", sans-serif;
+$baseFontSize: 1vw;
+$mobileBaseFontSize: 4vw;
+$baseFontSizeInPx: 14.4;
+$pxToRem: calc(1rem / $baseFontSizeInPx);
+$bodyFontSize: calc(14.4rem / $baseFontSizeInPx);
+$header_height: calc(70rem / $baseFontSizeInPx);
+$header_height_mob: calc(61rem / $baseFontSizeInPx);
+
+$colors: (
+  b1: #0d0d0d,
+  b2: #41403e,
+  b3: #2d2b2a,
+  b4: #222125,
+  b5: #1a1a19,
+  grey1: #fff2,
+  blue1: #317cff,
+  blue2: #cad3e2,
+  w1: #eaeaea,
+  w2: #cfcece,
+  r1: #dd0445,
+  green1: #32ba43,
+  yellow1: #ffe445,
+  yellow2: #fac220,
+);
+
+// border radius
+$smallXsBr: calc(4rem / $baseFontSizeInPx);
+$smallBr: calc(8rem / $baseFontSizeInPx);
+$mediumBr: calc(16rem / $baseFontSizeInPx);
+$largeXlBr: calc(56rem / $baseFontSizeInPx);
+
+// transition
+$fast: 0.3s;
+
+// mixins
+@mixin hover-active {
+  &:hover {
+    // .no-touch & {
+    @content;
+    // }
+  }
+  &:active {
+    .touch & {
+      @content;
+    }
+  }
+}
+
+@function s($size) {
+  @return $size * $pxToRem;
+}
+
+@function c($string) {
+  @return map.get($colors, $string);
+}

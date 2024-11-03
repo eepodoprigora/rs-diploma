@@ -1,0 +1,13 @@
+@use "../../styles/vars" as v;
+
+.input {
+  height: v.s(40);
+  width: 100%;
+  background-color: v.c(b2);
+  border-radius: v.$mediumBr;
+  border: 2px solid transparent;
+  margin-bottom: v.s(15);
+  padding: v.s(10) v.s(15);
+  color: v.c(w1);
+  font-size: v.s(14);
+}

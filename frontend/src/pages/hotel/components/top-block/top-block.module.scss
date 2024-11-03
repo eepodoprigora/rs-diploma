@@ -1,0 +1,37 @@
+@use "../../../../styles/vars" as v;
+
+.h1 {
+  font-size: v.s(30);
+}
+
+.top-main {
+  display: flex;
+  margin-bottom: v.s(20);
+}
+
+.top-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: v.s(15);
+}
+.rating {
+  margin-left: v.s(12);
+}
+
+.dot {
+  padding: 0 v.s(8);
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  font-size: v.s(24);
+  color: v.c(r1);
+  margin-right: v.s(20);
+}
+
+.actions {
+  display: flex;
+  gap: v.s(20);
+  margin-left: auto;
+}

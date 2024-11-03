@@ -1,0 +1,19 @@
+@use "../../styles/vars" as v;
+
+.h1 {
+  color: v.c(w1);
+  font-size: v.s(30);
+  margin-bottom: v.s(20);
+}
+
+.not-found {
+  text-align: center;
+  color: v.c(w1);
+  font-size: v.s(16);
+  padding-top: v.s(20);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}

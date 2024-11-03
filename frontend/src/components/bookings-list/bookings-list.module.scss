@@ -1,0 +1,45 @@
+@use "../../styles/vars" as v;
+
+.bookings-list {
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: v.s(50);
+}
+
+.h1 {
+  font-size: v.s(30);
+  margin-bottom: v.s(25);
+}
+
+.table {
+  border-radius: v.$mediumBr;
+  overflow: hidden;
+}
+
+.bookings-headers {
+  display: flex;
+  padding: v.s(10);
+  background-color: v.c(b2);
+  li {
+    width: v.s(230);
+    &:last-child {
+      width: v.s(110);
+    }
+    &:not(:last-child) {
+      border-right: 1px solid v.c(w1);
+    }
+  }
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: v.s(18);
+}
+
+.not-found-text {
+  margin-bottom: v.s(20);
+}

@@ -1,0 +1,68 @@
+@use "../../../../styles/vars" as v;
+
+.reviews {
+  padding: v.s(50) 0;
+  width: v.s(800);
+}
+
+.add-comment {
+  display: flex;
+  align-items: center;
+  margin-bottom: v.s(40);
+
+  input {
+    width: v.s(700);
+    margin-bottom: 0;
+  }
+}
+
+.send {
+  margin-left: v.s(10);
+  width: v.s(26);
+  height: v.s(26);
+  cursor: pointer;
+}
+
+.delete {
+  width: v.s(28);
+  height: v.s(28);
+  margin-left: v.s(20);
+  cursor: pointer;
+}
+
+.review {
+  margin-bottom: v.s(20);
+  display: flex;
+  padding-bottom: v.s(10);
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: v.s(700);
+    background-color: v.c(b2);
+    height: 1px;
+  }
+}
+
+.author {
+  margin-right: v.s(15);
+  text-decoration: underline;
+}
+
+.comment-top {
+  padding-top: v.s(8);
+  margin-bottom: v.s(10);
+}
+
+.avatar {
+  width: v.s(30);
+  height: v.s(30);
+  margin-right: v.s(10);
+}
+
+.content {
+  width: v.s(650);
+}

@@ -1,0 +1,32 @@
+@use "../../styles/vars" as v;
+
+.users-list {
+  width: v.s(800);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.h1 {
+  font-size: v.s(30);
+  margin-bottom: v.s(25);
+}
+
+.table {
+  border-radius: v.$mediumBr;
+  overflow: hidden;
+}
+
+.users-headers {
+  display: flex;
+  padding: v.s(10);
+  background-color: v.c(b2);
+  li {
+    width: v.s(230);
+    &:last-child {
+      width: v.s(110);
+    }
+    &:not(:last-child) {
+      border-right: 1px solid v.c(w1);
+    }
+  }
+}

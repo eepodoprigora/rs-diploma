@@ -1,0 +1,46 @@
+@use "../../styles/vars" as v;
+
+.main {
+  padding-top: calc(v.$header_height + v.s(50));
+  padding-left: v.s(60);
+  padding-right: v.s(60);
+  background-color: v.c(b1);
+  color: v.c(w1);
+  min-height: 100vh;
+}
+
+.back {
+  margin-bottom: v.s(50);
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color v.$fast;
+
+  @include v.hover-active {
+    color: v.c(r1);
+  }
+}
+
+.slider {
+  width: 50%;
+  flex-shrink: 0;
+  border-top-left-radius: v.$largeXlBr;
+  border-bottom-left-radius: v.$largeXlBr;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-map {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: v.s(50);
+  height: v.s(300);
+}
+
+.map {
+  width: 48%;
+  flex-shrink: 0;
+  border-top-right-radius: v.$largeXlBr;
+  border-bottom-right-radius: v.$largeXlBr;
+  overflow: hidden;
+}

@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+## Бронирование отелей
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Дипломный проект, разработанный в рамках обучения на курсе Result University**
 
-## Available Scripts
+### Описание
 
-In the project directory, you can run:
+Это веб-приложение для выбора и бронирования отелей, созданное для демонстрации навыков разработки на JavaScript, TypeScript и React.
 
-### `npm start`
+### Технологии
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend:**
+  - React
+  - Redux
+  - Redux Toolkit
+- **Backend:**
+  - Node.js
+  - Express.js
+  - MongoDB
+  - Mongoose
+- **Инструменты:**
+  - Docker
+  - Feature Slide Design (FSD) - методология разработки, использованная в проекте
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Установка
 
-### `npm test`
+#### С помощью Docker
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Скачайте репозиторий себе локально.
+2. В директории `backend` скопируйте файл `.env.example`, переименуйте его в `.env` и заполните свое окружение (`MONGO_URI`, `JWT_SECRET`).
+3. В корневой директории проекта выполните следующие команды:
+   `docker build -t hotels .`
+   `docker run -p 3000:3001 -d hotels`
+4. Откройте проект в браузере по адресу `http://localhost:3000`.
 
-### `npm run build`
+#### Без Docker
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Скачайте репозиторий себе локально.
+2. В директории `backend` скопируйте файл `.env.example`, переименуйте его в `.env` и заполните свое окружение (например, `MONGO_URI`, `JWT_SECRET`).
+3. В директориях `backend` и `frontend` выполните `npm i`, чтобы установить зависимости.
+4. Запустите `npm start` и ` npm run dev` в frontend и backend соответсвенно.
+5. Откройте проект в браузере по адресу `http://localhost:3000/`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Использование
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Приложение разделено по функционалу на несколько ролей (каждая следующая опция включает в себя весь функционал предыдущей):
 
-### `npm run eject`
+#### Неавторизованный пользователь
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Просматривать главную страницу со список отелей, заходить в карточку отеля.**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Авторизованный пользователь
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Оставлять отзывы.**
+- **Бронировать отель.**
+- **Просматривать страницу своих бронирований, изменять или удалять свои бронирования.**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Модератор
 
-## Learn More
+- **Просматривать страницу всех бронирований, изменять или удалять бронирования.**
+- **Добавлять новые карточки отелей и редактировать существующие.**
+- **Бронировать отель.**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Администратор
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Заходить на страницу всех пользователей.**
+- **Управлять их ролями и удалять пользователей.**
 
-### Code Splitting
+#### Общие комментарии
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Для тестривания ролей коды: Администратор - 0; Модератор-1, Пользователь-2 (назначается автоматически после регистрации или авторизации).**
+- **Использованы библиотеки React Hook Form, Yup, swiper, ymaps.**
+- **Тестовые данные для Mongo находятся в директории backend/db-for-test.**
+- **Скиншоты приложения доступны по ссылке `https://disk.yandex.ru/d/HbN_4aOFo5CuBQ` .**
 
-### Analyzing the Bundle Size
+### Автор
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Подопригора Евгения] - [eepodoprigora@gmail.com]

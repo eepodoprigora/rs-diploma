@@ -1,0 +1,22 @@
+@use "../../../../styles/vars" as v;
+
+.amenities {
+  padding-top: v.s(50);
+  width: v.s(800);
+}
+
+.amenity {
+  position: relative;
+  padding-left: v.s(20);
+  &::before {
+    content: url("https://img.icons8.com/ios-filled/16/FAB005/checkmark--v1.png");
+    width: v.s(16);
+    height: v.s(16);
+    position: absolute;
+    left: 0;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: v.s(8);
+  }
+}

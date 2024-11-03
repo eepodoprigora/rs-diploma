@@ -1,0 +1,41 @@
+@use "../../styles/vars" as v;
+
+.button {
+  padding: v.s(8) v.s(12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: v.$smallBr;
+  transition: background-color v.$fast, opacity v.$fast;
+  width: fit-content;
+  font-size: v.s(14);
+  line-height: 110%;
+  font-family: inherit;
+  cursor: pointer;
+
+  &.primary {
+    color: v.c(w1);
+    background-color: v.c(b3);
+    &:not([disabled]) {
+      @include v.hover-active {
+        background-color: v.c(b4);
+      }
+    }
+  }
+
+  &.secondary {
+    color: v.c(b1);
+    background-color: v.c(yellow1);
+    &:not([disabled]) {
+      @include v.hover-active {
+        background-color: v.c(yellow2);
+      }
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}

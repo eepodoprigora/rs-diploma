@@ -1,0 +1,16 @@
+@use "../../styles/_vars.scss" as v;
+
+.app {
+  background-color: v.c(b1);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  padding-top: calc(v.$header_height + v.s(20));
+  padding-bottom: v.s(50);
+  width: v.s(1000);
+  margin: 0 auto;
+  flex-grow: 1;
+}

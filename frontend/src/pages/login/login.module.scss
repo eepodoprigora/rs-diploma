@@ -1,0 +1,50 @@
+@use "../../styles/vars" as v;
+
+.main {
+  background-image: url("https://img.freepik.com/free-photo/vertical-shot-beautiful-sea-with-rocky-cliffs-trees-side_181624-5241.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  padding-top: v.s(50);
+}
+
+.form {
+  padding: v.s(40);
+  border-radius: v.$mediumBr;
+  background-color: v.c(b1);
+  width: v.s(340);
+  height: fit-content;
+}
+
+.h1 {
+  font-size: v.s(30);
+  text-align: center;
+  margin-bottom: v.s(15);
+  color: v.c(w1);
+}
+
+.error {
+  padding-top: v.s(15);
+  color: v.c(r1);
+}
+
+.register {
+  padding-top: v.s(20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  margin-left: v.s(5);
+  text-decoration: underline;
+}
+
+.to-main {
+  padding-top: v.s(20);
+  text-align: center;
+  text-decoration: underline;
+  display: block;
+}

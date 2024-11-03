@@ -1,0 +1,15 @@
+@use "../../../../styles/vars" as v;
+
+.swiper-slide {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: v.s(300);
+    object-fit: cover;
+  }
+}
+
+.prev {
+  display: none;
+}

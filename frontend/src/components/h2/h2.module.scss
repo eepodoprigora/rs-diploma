@@ -1,0 +1,6 @@
+@use "../../styles/vars" as v;
+
+.h2 {
+  font-size: v.s(26);
+  margin-bottom: v.s(15);
+}

@@ -1,0 +1,14 @@
+@use "../../styles/vars" as v;
+
+.users {
+  padding-top: calc(v.$header_height + v.s(50));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: v.c(b1);
+}
+
+.main {
+  flex-grow: 1;
+  color: v.c(w1);
+}
