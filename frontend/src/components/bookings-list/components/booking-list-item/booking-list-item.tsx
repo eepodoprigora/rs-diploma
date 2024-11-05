@@ -1,17 +1,18 @@
+import { useEffect, useState } from "react";
 import { useAppDispatch } from "../../../../hooks";
+import DatePicker from "react-datepicker";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm, Controller } from "react-hook-form";
+import "react-datepicker/dist/react-datepicker.css";
+
 import {
   deleteBookingAsync,
   editBooking,
 } from "../../../../store/thunk/bookings";
 import { HotelForBooking, UserForBooking } from "../../../../types";
-import DatePicker from "react-datepicker";
-import * as Yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm, Controller } from "react-hook-form";
-import "react-datepicker/dist/react-datepicker.css";
-
+import { formatDate, parseDate } from "../../../../utils";
+import { bookingSchema } from "./validation-schema";
 import s from "./booking-list-item.module.scss";
-import { formatDate } from "../../../../utils/format-date";
 
 interface IBookingListProps {
   id: string;
@@ -42,43 +43,34 @@ export const BookingsListItem = ({
   check_in,
   check_out,
 }: IBookingListProps) => {
+  const [checkInDateState, setCheckInDateState] = useState<Date | null>(
+    parseDate(check_in)
+  );
+  const [checkOutDateState, setCheckOutDateState] = useState<Date | null>(
+    parseDate(check_out)
+  );
   const dispatch = useAppDispatch();
-
-  const bookingSchema = Yup.object().shape({
-    checkInDate: Yup.date()
-      .required("Дата заезда обязательна")
-      .typeError("Неверный формат даты"),
-    checkOutDate: Yup.date()
-      .required("Дата выезда обязательна")
-      .typeError("Неверный формат даты")
-      .min(Yup.ref("checkInDate"), "Дата выезда должна быть позже даты заезда"),
-  });
-
-  const parseDate = (dateString: string): Date => {
-    const [day, month, year] = dateString.split(".").map(Number);
-    return new Date(year, month - 1, day);
-  };
 
   const defaultV = {
     checkInDate: parseDate(check_in),
     checkOutDate: parseDate(check_out),
   };
 
+  useEffect(() => {
+    setCheckInDateState(parseDate(check_in));
+    setCheckOutDateState(parseDate(check_out));
+  }, [check_in, check_out]);
+
   const {
     control,
     handleSubmit,
-    watch,
-    reset,
     formState: { errors },
   } = useForm<IFormInputs>({
     resolver: yupResolver(bookingSchema),
     defaultValues: defaultV,
   });
 
-  const checkInDate = watch("checkInDate");
-  watch("checkOutDate");
-
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: IFormInputs) => {
     const { checkInDate, checkOutDate } = data;
     try {
       const updatedBooking = await dispatch(
@@ -92,16 +84,15 @@ export const BookingsListItem = ({
 
       if (updatedBooking.type === "bookings/edit/fulfilled") {
         const bookingData = updatedBooking.payload as UpdatedBooking;
-        reset({
-          checkInDate: parseDate(bookingData.check_in),
-          checkOutDate: parseDate(bookingData.check_out),
-        });
+
+        // Устанавливаем новые значения для состояния
+        setCheckInDateState(parseDate(bookingData.check_in));
+        setCheckOutDateState(parseDate(bookingData.check_out));
       }
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
     }
   };
-
   const onDeleteBooking = (id: string) => {
     dispatch(deleteBookingAsync(id));
   };
@@ -117,8 +108,11 @@ export const BookingsListItem = ({
               control={control}
               render={({ field }) => (
                 <DatePicker
-                  selected={field.value}
-                  onChange={(date) => field.onChange(date)}
+                  selected={checkInDateState}
+                  onChange={(date) => {
+                    setCheckInDateState(date);
+                    field.onChange(date);
+                  }}
                   className={s.input}
                   placeholderText="Выберите дату заезда"
                   dateFormat="dd.MM.yyyy"
@@ -138,12 +132,23 @@ export const BookingsListItem = ({
               control={control}
               render={({ field }) => (
                 <DatePicker
-                  selected={field.value}
-                  onChange={(date) => field.onChange(date)}
+                  selected={checkOutDateState}
+                  onChange={(date) => {
+                    setCheckOutDateState(date);
+                    field.onChange(date);
+                  }}
                   className={s.input}
                   placeholderText="Выберите дату выезда"
                   dateFormat="dd.MM.yyyy"
-                  minDate={checkInDate || new Date()}
+                  minDate={
+                    checkInDateState
+                      ? new Date(
+                          checkInDateState.getFullYear(),
+                          checkInDateState.getMonth(),
+                          checkInDateState.getDate() + 1
+                        )
+                      : new Date()
+                  }
                   popperPlacement="bottom"
                   portalId="root-portal"
                 />

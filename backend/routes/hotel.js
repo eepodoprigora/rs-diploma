@@ -38,7 +38,6 @@ router.get("/hotel/:code", async (req, res) => {
     const hotel = await getHotel(req.params.code);
     res.send({ data: mapHotel(hotel) });
   } catch (error) {
-    console.log(error, "error2");
     res.status(500).json({ message: error.message });
   }
 });

@@ -7,10 +7,10 @@
 }
 
 .bookings-row {
-  // padding: v.s(15);
   display: flex;
   background-color: v.c(grey1);
   flex-wrap: wrap;
+  padding: 0 v.s(10);
 
   li {
     width: v.s(230);

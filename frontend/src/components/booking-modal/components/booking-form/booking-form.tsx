@@ -46,7 +46,6 @@ export const BookingForm = ({ setIsSubmitted }: IBookingForm) => {
   const checkInDate = watch("checkInDate");
 
   const onSubmit = (data: BookingFormValues) => {
-    console.log("Booking Data:", data);
     reset();
 
     const { phone, checkInDate, checkOutDate } = data;
