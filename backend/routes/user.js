@@ -51,7 +51,6 @@ router.delete(
   hasRole([ROLES.ADMIN]),
   async (req, res) => {
     await deleteUser(req.params.id);
-
     res.send({ error: null });
   }
 );
